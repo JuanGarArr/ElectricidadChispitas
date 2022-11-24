@@ -10,71 +10,68 @@ public class Sociedad implements Clientes {
     private String phone;
 
 
-    public void setCif(String cif) {
-        this.cif = cif;
+    @Override
+    public String getId() {
+        return this.cif;
     }
 
-    public String getCif() {
-        return cif;
+    @Override
+    public String getName() {
+        return this.enterpriseName;
+    }
+
+    @Override
+    public String getMailingAddress() {
+        return this.email;
+    }
+
+
+    @Override
+    public String getTown() {
+        return this.town;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public String getProvince() {
+        return this.province;
+    }
+
+
+    @Override
+    public String getEmail() {
+        return this.email;
+    }
+
+
+    @Override
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setCif(String cif) {
+        this.cif = cif;
     }
 
     public void setEnterpriseName(String enterpriseName) {
         this.enterpriseName = enterpriseName;
     }
 
-    public String getEnterpriseName() {
-        return enterpriseName;
-    }
-
-
-    @Override
-    public String getMailingAddress() {
-        return null;
-    }
-
-    @Override
-    public void setMailingAddress(String mailingAddress) {
-
-    }
-
-    @Override
-    public String getTown() {
-        return null;
-    }
-
-    @Override
     public void setTown(String town) {
-
+        this.town = town;
     }
 
-    @Override
-    public String getProvince() {
-        return null;
-    }
-
-    @Override
     public void setProvince(String province) {
-
+        this.province = province;
     }
-
-    @Override
-    public String getEmail() {
-        return null;
-    }
-
-    @Override
     public void setEmail(String email) {
-
+        this.email = email;
     }
 
-    @Override
-    public String getPhone() {
-        return null;
-    }
-
-    @Override
     public void setPhone(String phone) {
-
+        this.phone = phone;
     }
 }
 
