@@ -1,12 +1,12 @@
 package com.Juangarcia.electricidadchispitas;
 
-public class Producto implements ProductoServicio{
+public class Producto implements ProductoServicio {
     private Integer idProduct;
     private String name;
     private String brand;
-    private  String model;
-    private  String price;
-    private  Integer ivaType;
+    private String model;
+    private Integer price;
+    private Integer ivaType;
 
     public void setBrand(String brand) {
         this.brand = brand;
@@ -26,38 +26,39 @@ public class Producto implements ProductoServicio{
 
 
     @Override
-    public String getId() {
-        return null;
-    }
-
-    @Override
-    public void setId(Integer id) {
-
+    public Integer getId() {
+        return this.idProduct;
     }
 
     @Override
     public String getName() {
-        return null;
+        return this.name;
     }
 
     @Override
-    public String getPrice() {
-        return null;
+    public Integer getPrice() {
+        return this.price;
     }
 
     @Override
-    public void setPrice(String Price) {
-
+    public Integer getIvaType() {
+        return this.ivaType;
     }
 
-    @Override
-    public String getIvaType() {
-        return null;
+    public void setIdProduct(Integer idProduct) {
+        this.idProduct = idProduct;
     }
 
-    @Override
-    public void setIvaType(String ivaType) {
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public void setIvaType(Integer ivaType) {
+        this.ivaType = ivaType;
     }
 }
 

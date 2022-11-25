@@ -8,37 +8,39 @@ public class Servicios implements ProductoServicio{
     private Integer ivaType;
 
     @Override
-    public String getId() {
-        return null;
+    public Integer getId() {
+        return this.idService;
     }
 
-    @Override
-    public void setId(Integer id) {
-
-    }
 
     @Override
     public String getName() {
-        return null;
+        return this.name;
     }
 
     @Override
-    public String getPrice() {
-        return null;
+    public Integer getPrice() {
+        return this.price;
     }
 
     @Override
-    public void setPrice(String Price) {
-
+    public Integer getIvaType() {
+        return this.ivaType;
     }
 
-    @Override
-    public String getIvaType() {
-        return null;
+    public void setIdService(Integer idService) {
+        this.idService = idService;
     }
 
-    @Override
-    public void setIvaType(String ivaType) {
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public void setIvaType(Integer ivaType) {
+        this.ivaType = ivaType;
     }
 }

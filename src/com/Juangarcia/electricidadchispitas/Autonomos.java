@@ -28,7 +28,7 @@ public class Autonomos implements Clientes {
 
     @Override
     public String getName() {
-        return this.name +surname;
+        return this.name + surname;
     }
 
     @Override

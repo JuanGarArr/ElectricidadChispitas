@@ -2,15 +2,13 @@ package com.Juangarcia.electricidadchispitas;
 
 public interface ProductoServicio {
 
-    public  String getId();
-    public  void setId(Integer id);
+    public Integer getId();
 
     public  String getName();
 
-    public  String getPrice();
-    public  void setPrice(String Price);
+    public Integer getPrice();
 
-    public  String getIvaType();
-    public  void setIvaType(String ivaType);
+    public Integer getIvaType();
+
 
 }
