@@ -39,7 +39,6 @@ public class Sociedad implements Clientes {
         return this.province;
     }
 
-
     @Override
     public String getEmail() {
         return this.email;

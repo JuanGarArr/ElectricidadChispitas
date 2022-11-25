@@ -1,5 +1,6 @@
 package com.Juangarcia.electricidadchispitas;
 
+
 public class Producto implements ProductoServicio {
     private Integer idProduct;
     private String name;

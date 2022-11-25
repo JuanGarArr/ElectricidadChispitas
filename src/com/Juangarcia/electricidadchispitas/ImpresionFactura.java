@@ -1,6 +1,7 @@
 package com.Juangarcia.electricidadchispitas;
 
 public class ImpresionFactura {
+
    public static void print(Factura factura1) {
        System.out.println("");
        System.out.println("  FACTURA" + factura1.getId());
