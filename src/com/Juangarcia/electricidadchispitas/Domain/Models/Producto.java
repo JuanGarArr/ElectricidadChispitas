@@ -1,4 +1,4 @@
-package com.Juangarcia.electricidadchispitas;
+package com.Juangarcia.electricidadchispitas.Domain.Models;
 
 
 public class Producto implements ProductoServicio {

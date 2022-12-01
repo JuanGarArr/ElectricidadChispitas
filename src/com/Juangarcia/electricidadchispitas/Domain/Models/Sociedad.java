@@ -1,44 +1,37 @@
-package com.Juangarcia.electricidadchispitas;
+package com.Juangarcia.electricidadchispitas.Domain.Models;
 
-public class Autonomos implements Clientes {
-
-    private String dni;
-    private String name;
-    private String surname;
-    private String mailingAddress;
+public class Sociedad implements Clientes {
+    private String cif;
+    private String enterpriseName;
     private String town;
+    private String address;
     private String province;
     private String email;
     private String phone;
 
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-
     @Override
     public String getId() {
-        return this.dni;
+        return this.cif;
     }
 
     @Override
     public String getName() {
-        return this.name + surname;
+        return this.enterpriseName;
     }
 
     @Override
     public String getMailingAddress() {
-        return this.mailingAddress;
+        return this.email;
     }
+
 
     @Override
     public String getTown() {
         return this.town;
+    }
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
@@ -51,21 +44,18 @@ public class Autonomos implements Clientes {
         return this.email;
     }
 
+
     @Override
     public String getPhone() {
         return this.phone;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setCif(String cif) {
+        this.cif = cif;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setMailingAddress(String mailingAddress) {
-        this.mailingAddress = mailingAddress;
+    public void setEnterpriseName(String enterpriseName) {
+        this.enterpriseName = enterpriseName;
     }
 
     public void setTown(String town) {
@@ -75,7 +65,6 @@ public class Autonomos implements Clientes {
     public void setProvince(String province) {
         this.province = province;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -84,5 +73,4 @@ public class Autonomos implements Clientes {
         this.phone = phone;
     }
 }
-
 

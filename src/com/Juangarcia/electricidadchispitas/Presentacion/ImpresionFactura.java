@@ -1,4 +1,6 @@
-package com.Juangarcia.electricidadchispitas;
+package com.Juangarcia.electricidadchispitas.Presentacion;
+
+import com.Juangarcia.electricidadchispitas.Domain.Models.Factura;
 
 public class ImpresionFactura {
 

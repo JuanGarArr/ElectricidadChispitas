@@ -1,37 +1,44 @@
-package com.Juangarcia.electricidadchispitas;
+package com.Juangarcia.electricidadchispitas.Domain.Models;
 
-public class Sociedad implements Clientes {
-    private String cif;
-    private String enterpriseName;
+public class Autonomos implements Clientes {
+
+    private String dni;
+    private String name;
+    private String surname;
+    private String mailingAddress;
     private String town;
-    private String address;
     private String province;
     private String email;
     private String phone;
 
 
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+
     @Override
     public String getId() {
-        return this.cif;
+        return this.dni;
     }
 
     @Override
     public String getName() {
-        return this.enterpriseName;
+        return this.name + surname;
     }
 
     @Override
     public String getMailingAddress() {
-        return this.email;
+        return this.mailingAddress;
     }
-
 
     @Override
     public String getTown() {
         return this.town;
-    }
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     @Override
@@ -44,18 +51,21 @@ public class Sociedad implements Clientes {
         return this.email;
     }
 
-
     @Override
     public String getPhone() {
         return this.phone;
     }
 
-    public void setCif(String cif) {
-        this.cif = cif;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
-    public void setEnterpriseName(String enterpriseName) {
-        this.enterpriseName = enterpriseName;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMailingAddress(String mailingAddress) {
+        this.mailingAddress = mailingAddress;
     }
 
     public void setTown(String town) {
@@ -65,6 +75,7 @@ public class Sociedad implements Clientes {
     public void setProvince(String province) {
         this.province = province;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -73,4 +84,5 @@ public class Sociedad implements Clientes {
         this.phone = phone;
     }
 }
+
 

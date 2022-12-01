@@ -1,6 +1,6 @@
 package com.Juangarcia.electricidadchispitas.Data;
 
-import com.Juangarcia.electricidadchispitas.Clientes;
+import com.Juangarcia.electricidadchispitas.Domain.Models.Clientes;
 
 import java.util.List;
 

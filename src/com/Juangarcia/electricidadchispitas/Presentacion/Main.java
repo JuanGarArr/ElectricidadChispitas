@@ -1,5 +1,16 @@
-package com.Juangarcia.electricidadchispitas;
+/**package com.Juangarcia.electricidadchispitas.Presentacion;
+import com.Juangarcia.electricidadchispitas.Data.CustomerDataStore;
+import com.Juangarcia.electricidadchispitas.Data.MemCustomerDataStore;
+import com.Juangarcia.electricidadchispitas.Domain.Models.*;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.AddCustomerUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.DeleteCustomerUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.GetCustomerUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.UpdateCustomerUseCase;
+
+import java.util.List;
+
 import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -136,10 +147,42 @@ public class Main {
         System.out.print("Total: "+producto2.getPrice() +servicio2.getPrice());
         System.out.println("");
 
+
+        CustomerDataStore customerDataStore = new MemCustomerDataStore();
+
+        AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase();
+        addCustomerUseCase.execute(Autonomos);
+        addCustomerUseCase.execute(Sociedad);
+
+        GetCustomerUseCase getCustomerUseCase = new GetCustomerUseCase();
+        List <Clientes> customers = getCustomerUseCase.execute();
+        for(int i= 0; i < customers.size(); i++){
+            printClientes(customers.get(i));
+        }
+
+        System.out.println("----------Eliminado----------");
+
+        DeleteCustomerUseCase deleteCustomerUseCase = new DeleteCustomerUseCase(customerDataStore);
+        deleteCustomerUseCase.execute(Autonomos);
+        List <Clientes> customers2 = getCustomerUseCase.execute();
+        for(int i= 0; i < customers2.size(); i++){
+            printClientes(customers2.get(i));
+        }
+
+        System.out.println("----------Modificando----------");
+        UpdateCustomerUseCase updateCustomerUseCase = new UpdateCustomerUseCase((customerDataStore));
+        updateCustomerUseCase.execute(Sociedad);
+        List <Clientes> customers3 = getCustomerUseCase.execute();
+        for(int i= 0; i < customers3.size(); i++){
+            printClientes(customers3.get(i));
+        }
+
 //FACTURA
 
         ImpresionFactura.print(factura1);
         ImpresionFactura.print(factura2);
 
+     }
     }
-}
+ }
+ **/
