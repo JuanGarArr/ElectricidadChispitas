@@ -1,4 +1,4 @@
-package com.Juangarcia.electricidadchispitas.Data;
+package com.Juangarcia.electricidadchispitas.Data.Customer;
 
 import com.Juangarcia.electricidadchispitas.Domain.Models.Clientes;
 

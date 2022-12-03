@@ -1,7 +1,6 @@
-package com.Juangarcia.electricidadchispitas.Domain.UserCases;
+package com.Juangarcia.electricidadchispitas.Domain.UserCases.Customer;
 
-import com.Juangarcia.electricidadchispitas.Data.CustomerDataStore;
-import com.Juangarcia.electricidadchispitas.Data.MemCustomerDataStore;
+import com.Juangarcia.electricidadchispitas.Data.Customer.CustomerDataStore;
 import com.Juangarcia.electricidadchispitas.Domain.Models.Clientes;
 
 public class DeleteCustomerUseCase {
