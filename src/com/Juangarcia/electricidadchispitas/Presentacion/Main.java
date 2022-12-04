@@ -1,11 +1,23 @@
 package com.Juangarcia.electricidadchispitas.Presentacion;
 import com.Juangarcia.electricidadchispitas.Data.Customer.CustomerDataStore;
 import com.Juangarcia.electricidadchispitas.Data.Customer.MemCustomerDataStore;
+import com.Juangarcia.electricidadchispitas.Data.Factura.FacturaDataStore;
+import com.Juangarcia.electricidadchispitas.Data.Factura.MemFacturaDataStore;
+import com.Juangarcia.electricidadchispitas.Data.Item.ItemDataStore;
+import com.Juangarcia.electricidadchispitas.Data.Item.MemItemDataStore;
 import com.Juangarcia.electricidadchispitas.Domain.Models.*;
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Customer.AddCustomerUseCase;
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Customer.DeleteCustomerUseCase;
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Customer.GetCustomersUseCase;
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Customer.UpdateCustomerUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.Factura.AddFacturaUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.Factura.DeleteFacturaUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.Factura.GetFacturaUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.Factura.UpdateFacturaUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.Item.AddItemUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.Item.DeleteItemUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.Item.GetItemUseCase;
+import com.Juangarcia.electricidadchispitas.Domain.UserCases.Item.UpdateItemUseCase;
 
 import java.util.List;
 
@@ -147,8 +159,10 @@ public class Main {
         System.out.print("Total: "+producto2.getPrice() +servicio2.getPrice());
         System.out.println("");
 
-
+//CUSTOMERS
         CustomerDataStore customerDataStore = new MemCustomerDataStore();
+
+        System.out.println("----- Agregando Sociedad ------");
 
         AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase(customerDataStore);
         addCustomerUseCase.execute(autonomo);
@@ -157,28 +171,98 @@ public class Main {
         GetCustomersUseCase getCustomersUseCase = new GetCustomersUseCase(customerDataStore);
         List<Clientes> customers = getCustomersUseCase.execute();
         for (int i = 0; i < customers.size(); i++) {
-   //       printCliente(customers.get(i));
+          //printCliente(customers.get(i));
         }
 
-        System.out.println("----- Eliminando ------");
+        System.out.println("----- Eliminando Sociedad ------");
 
         DeleteCustomerUseCase deleteCustomerUseCase = new DeleteCustomerUseCase(customerDataStore);
         deleteCustomerUseCase.execute(autonomo);
         List<Clientes> customers2 = getCustomersUseCase.execute();
         for (int i = 0; i < customers2.size(); i++) {
-    //     printCliente(customers2.get(i));
+        //printCliente(customers2.get(i));
         }
 
         System.out.println("----- Modificando la Sociedad ------");
-        sociedad.setEmail("0000000000");
+
         UpdateCustomerUseCase updateCustomerUseCase = new UpdateCustomerUseCase(customerDataStore);
         updateCustomerUseCase.execute(sociedad);
         List<Clientes> customers3 = getCustomersUseCase.execute();
         for (int i = 0; i < customers3.size(); i++) {
-    //     printCliente(customers3.get(i));
+         //printCliente(customers3.get(i));
+        }
+
+
+// ITEMS
+        ItemDataStore itemDataStore = new MemItemDataStore();
+
+        System.out.println("----- Agregando Item ------");
+
+        AddItemUseCase addItemUseCase = new AddItemUseCase(itemDataStore);
+        addItemUseCase.execute(producto1);
+        addItemUseCase.execute(servicio1);
+        addItemUseCase.execute(producto2);
+        addItemUseCase.execute(servicio2);
+
+        GetItemUseCase getItemUseCase = new GetItemUseCase(itemDataStore);
+        List<ProductoServicio> items = getItemUseCase.execute();
+        for (int i = 0; i < items.size(); i++) {
+                   //printItems(items.get(i));
+        }
+
+        System.out.println("----- Eliminando Item ------");
+
+        DeleteItemUseCase deleteItemUseCase = new DeleteItemUseCase(itemDataStore);
+        deleteItemUseCase.execute(producto1);
+        deleteItemUseCase.execute(servicio1);
+        List<ProductoServicio> items2 = getItemUseCase.execute();
+        for (int i = 0; i < items2.size(); i++) {
+                 //printItems(items2.get(i));
+        }
+
+        System.out.println("----- Modificando Item------");
+
+        UpdateItemUseCase updateItemUseCase = new UpdateItemUseCase(itemDataStore);
+        updateCustomerUseCase.execute(sociedad);
+        List<ProductoServicio> items3 = getItemUseCase.execute();
+        for (int i = 0; i < items3.size(); i++) {
+                 //printItems(items3.get(i));
         }
 
 //FACTURA
+        FacturaDataStore facturaDataStore = new MemFacturaDataStore();
+
+        System.out.println("----- Agregando Facturas ------");
+
+        AddFacturaUseCase addFacturaUseCase = new AddFacturaUseCase(facturaDataStore);
+        addFacturaUseCase.execute(factura1);
+        addFacturaUseCase.execute(factura2);
+
+        GetFacturaUseCase getFacturaUseCase = new GetFacturaUseCase(facturaDataStore);
+        List<Factura> Factura = getFacturaUseCase.execute();
+        for (int i = 0; i < Factura.size(); i++) {
+               //printFacturas(Factura.get(i));
+        }
+
+        System.out.println("----- Eliminando Facturas ------");
+
+        DeleteFacturaUseCase deleteFacturaUseCase = new DeleteFacturaUseCase(facturaDataStore);
+        deleteFacturaUseCase.execute(factura1);
+        deleteFacturaUseCase.execute(factura2);
+        List<Factura> Factura2 = getFacturaUseCase.execute();
+        for (int i = 0; i < Factura2.size(); i++) {
+              //  printFacturas(Factura2.get(i));
+        }
+
+        System.out.println("----- Modificando Facturas------");
+
+        UpdateFacturaUseCase updateFacturaUseCase = new UpdateFacturaUseCase(facturaDataStore);
+        updateFacturaUseCase.execute(factura1);
+        List<Factura> Factura3 = getFacturaUseCase.execute();
+        for (int i = 0; i < Factura3.size(); i++) {
+                //printFactura(Factura3.get(i));
+        }
+
 
         ImpresionFactura.print(factura1);
         ImpresionFactura.print(factura2);
