@@ -11,9 +11,7 @@ import com.Juangarcia.electricidadchispitas.Domain.UserCases.Customer.DeleteCust
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Customer.GetCustomersUseCase;
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Customer.UpdateCustomerUseCase;
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Factura.AddFacturaUseCase;
-import com.Juangarcia.electricidadchispitas.Domain.UserCases.Factura.DeleteFacturaUseCase;
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Factura.GetFacturaUseCase;
-import com.Juangarcia.electricidadchispitas.Domain.UserCases.Factura.UpdateFacturaUseCase;
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Item.AddItemUseCase;
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Item.DeleteItemUseCase;
 import com.Juangarcia.electricidadchispitas.Domain.UserCases.Item.GetItemUseCase;
@@ -246,22 +244,7 @@ public class Main {
 
         System.out.println("----- Eliminando Facturas ------");
 
-        DeleteFacturaUseCase deleteFacturaUseCase = new DeleteFacturaUseCase(facturaDataStore);
-        deleteFacturaUseCase.execute(factura1);
-        deleteFacturaUseCase.execute(factura2);
-        List<Factura> Factura2 = getFacturaUseCase.execute();
-        for (int i = 0; i < Factura2.size(); i++) {
-              //  printFacturas(Factura2.get(i));
-        }
 
-        System.out.println("----- Modificando Facturas------");
-
-        UpdateFacturaUseCase updateFacturaUseCase = new UpdateFacturaUseCase(facturaDataStore);
-        updateFacturaUseCase.execute(factura1);
-        List<Factura> Factura3 = getFacturaUseCase.execute();
-        for (int i = 0; i < Factura3.size(); i++) {
-                //printFactura(Factura3.get(i));
-        }
 
 
         ImpresionFactura.print(factura1);
